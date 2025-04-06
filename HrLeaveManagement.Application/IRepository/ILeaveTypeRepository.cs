@@ -9,7 +9,7 @@ namespace HrLeaveManagement.Application.IRepository
 {
     public interface ILeaveTypeRepository : IGenericRepositoryAsync<LeaveType>
     {
-        Task<bool> CreateLeaveType(LeaveType leaveType);
+        Task<int> CreateLeaveType(LeaveType leaveType);
         Task<bool> UpdateLeaveType(LeaveType leaveType);
         Task<bool> DeleteLeaveType(int id);
         Task<IReadOnlyList<LeaveType>> GetAllLeaveTypes();

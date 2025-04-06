@@ -9,6 +9,7 @@ namespace HrLeaveManagement.Application.IRepository
 {
     public interface ILeaveRequestRepository : IGenericRepositoryAsync<LeaveRequest>
     {
+        Task<int> CreateLeaveRequest(LeaveRequest leaveRequest);
         Task<bool> ChangeApprovalStatus(int id, bool approved, string approverComment);
         Task<bool> CancelRequest(int id);
         Task<LeaveRequest> GetLeaveRequestWithDetails(int id);

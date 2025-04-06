@@ -7,16 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\LeaveTypes\Handler\**" />
+    <EmbeddedResource Remove="Features\LeaveTypes\Handler\**" />
+    <None Remove="Features\LeaveTypes\Handler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HrLeaveManagement.Domain\HrLeaveManagement.Domain\HrLeaveManagement.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\LeaveTypes\Handler\Commands\" />
   </ItemGroup>
 
 </Project>
