@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Dtos.LeaveRequest
 {
-    public class CreateLeaveRequestDto 
+    public class UpdateLeaveRequestDto : BaseDto
     {
 
         public DateTime StartDate { get; set; }
@@ -17,9 +17,10 @@ namespace HrLeaveManagement.Application.Dtos.LeaveRequest
 
         public int LeaveTypeId { get; set; }
 
-        public DateTime DateRequested { get; set; } = DateTime.Now;
-
         public string? RequestComments { get; set; }
+
+        public bool? Cancelled  { get; set; }
+
 
 
     }

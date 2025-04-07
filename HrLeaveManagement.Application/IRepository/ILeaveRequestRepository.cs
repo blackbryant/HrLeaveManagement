@@ -15,6 +15,8 @@ namespace HrLeaveManagement.Application.IRepository
         Task<LeaveRequest> GetLeaveRequestWithDetails(int id);
         Task<IReadOnlyList<LeaveRequest>> GetLeaveRequestsWithDetails();
         Task<IReadOnlyList<LeaveRequest>> GetUserLeaveRequests(string userId);
+
+
     }
 
 }

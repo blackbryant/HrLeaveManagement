@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Dtos.LeaveAllocation
 {
-    public class CreateLeaveAllocationDto
+    public class UpdateLeaveAllocationDto :BaseDto
     {
         public int NumberOfDays { get; set; }
 
         public int LeaveTypeId { get; set; }
 
-        public int Period { get; set; } = DateTime.Now.Year;
+        public int Period { get; set; } 
 
 
     }

@@ -18,5 +18,8 @@ namespace HrLeaveManagement.Application.IRepository
 
         Task Delete(T entity);
 
+       
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using HrLeaveManagement.Application.Dtos.LeaveType;
+﻿using HrLeaveManagement.Application.Dtos.LeaveRequest;
+using HrLeaveManagement.Application.Dtos.LeaveType;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Queries.Commands
 {
-    public interface CreateLeaveTypeCommand : IRequest<int>
+    public interface UpdateLeaveTypeCommand : IRequest<Unit>
     {
-        public CreateLeaveTypeDto LeaveTypeDto { get; set; }
+        public UpdateLeaveRequestDto LeaveTypeDto { get; set; }
 
     }
 }
