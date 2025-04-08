@@ -11,7 +11,7 @@ namespace HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Queries.Com
 {
     public interface UpdateLeaveTypeCommand : IRequest<Unit>
     {
-        public UpdateLeaveRequestDto LeaveTypeDto { get; set; }
+        public UpdateLeaveTypeDto LeaveTypeDto { get; set; }
 
     }
 }

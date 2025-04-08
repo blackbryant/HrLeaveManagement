@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using HrLeaveManagement.Application.Dtos.LeaveRequest;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace HrLeaveManagement.Application.Features.LeaveRequest.Requests.Commands
 {
     interface  CreateLeaveRequestCommand : IRequest<int>
     {
-        public LeaveRequestDto LeaveRequestDto { get; set; }
+        public CreateLeaveRequestDto LeaveRequestDto { get; set; }
 
     }
 }

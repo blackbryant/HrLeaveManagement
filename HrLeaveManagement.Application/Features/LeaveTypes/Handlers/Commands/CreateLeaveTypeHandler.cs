@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HrLeaveManagement.Application.Dtos.LeaveType.Validators;
+using HrLeaveManagement.Application.Exceptions;
 using HrLeaveManagement.Application.Features.LeaveRequest.Requests.Commands;
 using HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Queries.Commands;
 using HrLeaveManagement.Application.IRepository;
@@ -33,7 +34,7 @@ namespace HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Commands
 
             if ( validationResult.IsValid == false)
             {
-                throw new Exception("Validation failed");
+                throw new ValidationException(validationResult);
             }
 
             //寫入資料庫
