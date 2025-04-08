@@ -2,7 +2,7 @@
 using HrLeaveManagement.Application.Dtos.LeaveAllocation;
 using HrLeaveManagement.Application.Dtos.LeaveRequest;
 using HrLeaveManagement.Application.Dtos.LeaveType;
-using HrLeaveManagement.Domain;
+using HrLeaveManagement.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,7 +4,7 @@ using HrLeaveManagement.Application.Exceptions;
 using HrLeaveManagement.Application.Features.LeaveRequest.Requests.Commands;
 using HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Queries.Commands;
 using HrLeaveManagement.Application.IRepository;
-using HrLeaveManagement.Domain;
+using HrLeaveManagement.Domain.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;

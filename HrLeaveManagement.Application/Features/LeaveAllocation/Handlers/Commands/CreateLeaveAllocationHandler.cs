@@ -3,6 +3,7 @@ using HrLeaveManagement.Application.Dtos.LeaveAllocation.Validators;
 using HrLeaveManagement.Application.Exceptions;
 using HrLeaveManagement.Application.Features.LeaveAllocation.Requests.Commands;
 using HrLeaveManagement.Application.IRepository;
+using HrLeaveManagement.Domain.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace HrLeaveManagement.Application.Features.LeaveAllocation.Handlers.Comman
             }
 
 
-            var leaveAllocation = _mapper.Map<Domain.LeaveAllocation>(request.LeaveAllocationDto);
+            var leaveAllocation = _mapper.Map<Domain.Models.LeaveAllocation>(request.LeaveAllocationDto);
             var id = await _leaveAllocationRepository.CreateLeaveAllocation(leaveAllocation);
 
             return id;

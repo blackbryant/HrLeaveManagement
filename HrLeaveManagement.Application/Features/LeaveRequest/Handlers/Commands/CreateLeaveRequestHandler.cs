@@ -4,6 +4,7 @@ using HrLeaveManagement.Application.Exceptions;
 using HrLeaveManagement.Application.Features.LeaveRequest.Requests.Commands;
 using HrLeaveManagement.Application.IRepository;
 using MediatR;
+using HrLeaveManagement.Domain.Models;
 
 
 namespace HrLeaveManagement.Application.Features.LeaveRequest.Handlers.Commands
@@ -31,7 +32,7 @@ namespace HrLeaveManagement.Application.Features.LeaveRequest.Handlers.Commands
             }
 
 
-            var leaveRequest = _mapper.Map<Domain.LeaveRequest>(request.LeaveRequestDto);
+            var leaveRequest = _mapper.Map<Domain.Models.LeaveRequest>(request.LeaveRequestDto);
             await _leaveRequestRepository.CreateLeaveRequest(leaveRequest);
             return leaveRequest.Id;
         }
