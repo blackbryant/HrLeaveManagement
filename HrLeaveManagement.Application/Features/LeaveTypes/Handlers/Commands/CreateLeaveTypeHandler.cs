@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using HrLeaveManagement.Application.Contracts;
 using HrLeaveManagement.Application.Dtos.LeaveType.Validators;
 using HrLeaveManagement.Application.Exceptions;
 using HrLeaveManagement.Application.Features.LeaveRequest.Requests.Commands;
 using HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Queries.Commands;
 using HrLeaveManagement.Application.IRepository;
+using HrLeaveManagement.Application.Models;
 using HrLeaveManagement.Domain.Models;
 using MediatR;
 using System;
@@ -39,11 +41,13 @@ namespace HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Commands
 
             //寫入資料庫
             var leaveType = _mapper.Map<LeaveType>(request.LeaveTypeDto);
+                await   _leaveTypeRepository.Add(leaveType);
 
-            var id = await   _leaveTypeRepository.CreateLeaveType(leaveType);
+       
 
 
-            return id;
+
+            return leaveType.Id;
         }
 
     }

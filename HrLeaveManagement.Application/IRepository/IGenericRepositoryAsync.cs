@@ -8,7 +8,7 @@ namespace HrLeaveManagement.Application.IRepository
 {
     public interface IGenericRepositoryAsync<T> where T : class
     {
-        Task<IReadOnlyList<T>> GetAllAsync();
+        Task<IReadOnlyList<T>> GetAll();
 
         Task<T> GetById(int id);
 

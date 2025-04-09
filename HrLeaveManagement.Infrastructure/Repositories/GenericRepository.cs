@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HrLeaveManagement.Domain.Models;
+using Microsoft.EntityFrameworkCore;
+using HrLeaveManagement.Application.IRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,40 +9,57 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Infrastructure.Repositories
 {
-    public class GenericRepository<T> : IGenericRespository<T> where T : class
+    public class GenericRepository<T> : IGenericRepositoryAsync<T> where T : class
     {
+        private readonly HrLeaveContext _dbContext;
 
-
-        public Task<T> Add(T entity)
+        public GenericRepository(HrLeaveContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
+        }
+         
+        public async Task Add(T entity)
+        {
+            await _dbContext.Set<T>().AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
+           
         }
 
-        public Task Delete(T entity)
+        public async Task Delete(T entity)
         {
-            throw new NotImplementedException();
+             _dbContext.Set<T>().Remove(entity);
+            await  _dbContext.SaveChangesAsync();
         }
 
-        public Task<bool> Exists(int id)
+        public async  Task<bool> Exists(int id)
         {
-            throw new NotImplementedException();
+            var entity = await _dbContext.Set<T>().FindAsync(id);
+            return entity != null;
         }
 
-        public Task<T> Get(int id)
+        public async Task<T> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await  _dbContext.Set<T>().FindAsync(id);
         }
 
-        public Task<IReadOnlyList<T>> GetAll()
+        public async Task<IReadOnlyList<T>> GetAll()
         {
-            throw new NotImplementedException();
+          var entities = await _dbContext.Set<T>().ToListAsync();
+            return entities;
         }
 
-        public Task Update(T entity)
+        public async Task Update(T entity)
         {
-            throw new NotImplementedException();
+            var entityEntry = _dbContext.Entry(entity);
+
+            if (entityEntry.State == EntityState.Detached)
+            {
+                _dbContext.Set<T>().Attach(entity);
+            }
+
+            entityEntry.State = EntityState.Modified;
+
+            await _dbContext.SaveChangesAsync();
         }
-
-
     }
 }

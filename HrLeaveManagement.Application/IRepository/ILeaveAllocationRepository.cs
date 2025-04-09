@@ -11,12 +11,7 @@ namespace HrLeaveManagement.Application.IRepository
 {
     public  interface ILeaveAllocationRepository : IGenericRepositoryAsync<LeaveAllocation>
     {
-        Task<int> CreateLeaveAllocation(LeaveAllocation leaveAllocation);
-        Task<bool> AllocateLeave(LeaveAllocation leaveAllocation);
-        Task<bool> UpdateLeaveAllocation(LeaveAllocation leaveAllocation);
-        Task<bool> DeleteLeaveAllocation(int id);
-        Task<IReadOnlyList<LeaveAllocation>> GetLeaveAllocationsWithDetails();
-        Task<IReadOnlyList<LeaveAllocation>> GetUserAllocations(string userId);
+
     }
      
 }

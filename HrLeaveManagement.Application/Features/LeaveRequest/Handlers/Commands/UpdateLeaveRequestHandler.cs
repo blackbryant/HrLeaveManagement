@@ -44,11 +44,12 @@ namespace HrLeaveManagement.Application.Features.LeaveRequest.Handlers.Commands
             }
             else if (request.ChangeLeaveRequestApproveDto != null)
             {
+                _mapper.Map(request.LeaveRequestDto, leaveRequest);
                 if (request.ChangeLeaveRequestApproveDto.Approeved.HasValue)
                 {
                     string commands = leaveRequest.RequestComments!=null ? leaveRequest.RequestComments : "";
-
-                    await _leaveRequestRepository.ChangeApprovalStatus(leaveRequest.Id, request.ChangeLeaveRequestApproveDto.Approeved.Value, commands);
+                    
+                    await _leaveRequestRepository.ChangeApprovalStatus(leaveRequest, true, commands);
                 }
             }
 

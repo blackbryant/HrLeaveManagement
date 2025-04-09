@@ -43,9 +43,9 @@ namespace HrLeaveManagement.Application.Features.LeaveAllocation.Handlers.Comman
 
 
             var leaveAllocation = _mapper.Map<Domain.Models.LeaveAllocation>(request.LeaveAllocationDto);
-            var id = await _leaveAllocationRepository.CreateLeaveAllocation(leaveAllocation);
+             await _leaveAllocationRepository.Add(leaveAllocation);
 
-            return id;
+            return leaveAllocation.Id;
         }
     }
 
