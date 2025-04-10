@@ -1,6 +1,5 @@
 ﻿
 using HrLeaveManagement.Application.Contracts;
-using HrLeaveManagement.Application.Models;
 using HrLeaveManagement.Infrastructure.EmailSerice;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +17,7 @@ namespace HrLeaveManagement.Infrastructure.Services
         public static IServiceCollection AddMailService(this IServiceCollection services, IConfiguration configuration)
         {
             // Fix: Use Bind instead of Configure to map the configuration section to the EmailSetting class
-            var emailSettings = new EmailSetting();
+            var emailSettings = new Domain.ValueOjects.EmailSetting();
             configuration.GetSection("EmailSettings").Bind(emailSettings);
             services.AddSingleton(emailSettings);
 

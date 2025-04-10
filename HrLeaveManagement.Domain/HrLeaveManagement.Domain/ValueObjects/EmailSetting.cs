@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HrLeaveManagement.Application.Models
+namespace HrLeaveManagement.Domain.ValueOjects
 {
     public class EmailSetting
     {
