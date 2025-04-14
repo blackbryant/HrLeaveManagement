@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveAllocation.Requests
 {
-    public  interface GetLeaveAllocationDtoDetailRequest : IRequest<LeaveAllocationDto>
+    public  class GetLeaveAllocationDtoDetailRequest : IRequest<LeaveAllocationDto>
     {
-        int Id { get; set; }
+        public int Id { get; set; }
     }
 
 }

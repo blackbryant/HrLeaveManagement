@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveRequest.Requests
 {
-    public   interface GetLeaveRequestDetailDtoRequest : IRequest<LeaveRequestDto>
+    public class GetLeaveRequestDetailDtoRequest : IRequest<LeaveRequestDto>
     {
-        int Id { get; set; }
+       public required  int Id { get; set; }
     }
 
 }

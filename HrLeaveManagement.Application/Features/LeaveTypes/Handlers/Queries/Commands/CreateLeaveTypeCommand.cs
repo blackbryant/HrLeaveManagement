@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Queries.Commands
 {
-    public interface CreateLeaveTypeCommand : IRequest<int>
+    public class CreateLeaveTypeCommand : IRequest<int>
     {
-        public CreateLeaveTypeDto LeaveTypeDto { get; set; }
+        public required CreateLeaveTypeDto LeaveTypeDto { get; set; }
 
     }
 }

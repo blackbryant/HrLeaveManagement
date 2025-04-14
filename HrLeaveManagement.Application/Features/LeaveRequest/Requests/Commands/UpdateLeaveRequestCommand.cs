@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveRequest.Requests.Commands
 {
-    interface UpdateLeaveRequestCommand : IRequest<Unit>
+    public class UpdateLeaveRequestCommand : IRequest<Unit>
     {
+        public int Id { get; set; }
+
         public UpdateLeaveRequestDto LeaveRequestDto { get; set; }
 
         public ChangeLeaveRequestApproveDto ChangeLeaveRequestApproveDto { get; set; }

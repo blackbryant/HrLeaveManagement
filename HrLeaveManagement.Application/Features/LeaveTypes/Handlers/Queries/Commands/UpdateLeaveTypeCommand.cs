@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveTypes.Handlers.Queries.Commands
 {
-    public interface UpdateLeaveTypeCommand : IRequest<Unit>
+    public class UpdateLeaveTypeCommand : IRequest<Unit>
     {
         public UpdateLeaveTypeDto LeaveTypeDto { get; set; }
 

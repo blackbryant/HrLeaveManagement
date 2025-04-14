@@ -14,7 +14,7 @@ namespace HrLeaveManagement.Infrastructure.Services
 {
     public static class MailServiceExtensions
     {
-        public static IServiceCollection AddMailService(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigurationMailService(this IServiceCollection services, IConfiguration configuration)
         {
             // Fix: Use Bind instead of Configure to map the configuration section to the EmailSetting class
             var emailSettings = new Domain.ValueOjects.EmailSetting();

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveRequest.Requests.Commands
 {
-    interface CreateLeaveRequestCommand2 : IRequest<BaseCommandResponses>
+    public class CreateLeaveRequestCommand2 : IRequest<BaseCommandResponses>
     {
-        public CreateLeaveRequestDto LeaveRequestDto { get; set; }
+        public required CreateLeaveRequestDto LeaveRequestDto { get; set; }
 
     }
 }

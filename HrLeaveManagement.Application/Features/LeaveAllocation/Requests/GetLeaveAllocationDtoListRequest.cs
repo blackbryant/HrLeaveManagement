@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveAllocation.Requests
 {
-    public interface GetLeaveAllocationDtoRequest : IRequest<List<LeaveAllocationDto>>
+    public class GetLeaveAllocationDtoListRequest : IRequest<List<LeaveAllocationDto>>
     {
        
     }

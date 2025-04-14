@@ -15,7 +15,7 @@ namespace HrLeaveManagement.Infrastructure.Services
     public static class PersistenceServiceRegistration
     {
 
-        public static IServiceCollection ConfigurationServices(this IServiceCollection services , IConfiguration configuration)
+        public static IServiceCollection ConfigurationPersistenceServices(this IServiceCollection services , IConfiguration configuration)
         {
             services.AddDbContext<HrLeaveContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));

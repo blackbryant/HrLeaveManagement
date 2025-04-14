@@ -6,4 +6,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="8.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HrLeaveManagement.Application\HrLeaveManagement.Application.csproj" />
+    <ProjectReference Include="..\HrLeaveManagement.Infrastructure\HrLeaveManagement.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

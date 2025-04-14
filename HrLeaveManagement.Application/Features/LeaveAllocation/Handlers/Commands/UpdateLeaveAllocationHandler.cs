@@ -36,7 +36,7 @@ namespace HrLeaveManagement.Application.Features.LeaveAllocation.Handlers.Comman
 
 
 
-            var leaveAlloction = await  _leaveAllocationRepository.GetById(request.LeaveAllocationDto.Id);
+            var leaveAlloction = await  _leaveAllocationRepository.GetById(request.Id);
 
             var leaveAllocation = _mapper.Map(request.LeaveAllocationDto, leaveAlloction);
             await _leaveAllocationRepository.Update(leaveAllocation);

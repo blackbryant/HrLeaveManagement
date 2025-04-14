@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace HrLeaveManagement.Application.Features.LeaveAllocation.Requests.Commands
 {
-    public interface UpdateLeaveAllocationCommand : IRequest<Unit>
+    public class UpdateLeaveAllocationCommand : IRequest<Unit>
     {
-        public UpdateLeaveAllocationDto LeaveAllocationDto { get; set; }
+        public int Id { get; set; }
+        public required UpdateLeaveAllocationDto LeaveAllocationDto { get; set; }
 
     }
 }
